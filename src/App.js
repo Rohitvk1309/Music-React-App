@@ -10,15 +10,13 @@ function App() {
     setisLoading(true)
     let data = await fetch(`https://v1.nocodeapi.com/rohit_1309/spotify/pkbiLcnmKqRTgQOq/search?q=${keyword===""?"trending":keyword}&type=track`)
     let convertData = await data.json()
+    console.log(convertData)
     setTrack(convertData.tracks.items);
     setisLoading(false);
   }
-
   useEffect(() => {
     getTrack()
   }, [])
-  
-
   return (
     <>
       <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -55,6 +53,7 @@ function App() {
 
           </div>
         </div>
+
         <div className="row">
           {
             track.map((element) => {
