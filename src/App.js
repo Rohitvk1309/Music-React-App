@@ -8,7 +8,7 @@ function App() {
 
   const getTrack = async () => {
     setisLoading(true)
-    let data = await fetch(`https://v1.nocodeapi.com/rohit_1309/spotify/pkbiLcnmKqRTgQOq/search?q=${keyword===""?"trending":keyword}&type=track`)
+    let data = await fetch(`https://v1.nocodeapi.com/rohit_vk/spotify/sGONuGVEfImODUfP/search?q=${keyword===""?"trending":keyword}&type=track`)
     let convertData = await data.json()
     console.log(convertData)
     setTrack(convertData.tracks.items);
